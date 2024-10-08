@@ -1,0 +1,125 @@
+# Function to start the game
+def start_game():
+    print("Welcome to Midnight Mystery!")
+    print("You are a detective investigating a house where murders occur at exactly midnight")
+    print("Do you go to the neighbor's house or enter the house? ('Neighbor' or 'House'")
+# First choice player must decide to go to neighbors house or enter the house directly
+choice = input("Do you go to the neighbor's house or enter the house? ('Neighbor' or 'House'")
+# If player chooses neighbors house the game proceeds with neighbours_route
+if choice == "Neighbor":
+    neighbor_route()
+# If player chooses to go directly into the house the game proceeds with house_route
+elif choice == "House":
+    house_route()
+# If player inputs an invalid option the game hints the player what to select
+else:
+    print("Invalid choice please print 'House' or 'Neighbor'")
+# Function that follows the neighbors route if thats with the player selects
+def neighbor_route():
+    print("You knock on the neighbor's door and explain that you're a detective.")
+    print("The neighbor seems worried—perhaps even guilty of something?")
+# Player has a choice to ask whats wrong or proceed with questioning
+    choice = input("Do you ask him what's wrong, or proceed with asking questions regarding the case? ('Ask' 'Question'")
+# Lines 24 - 122 give players options that continue the game
+if choice == "Ask":
+    print("Are you alright? -You ask the neighbor")
+    print("YES... I DIDN'T DO ANYTHING!-The neighbor yells. You become even more suspicious.")
+    choice = input("Do you decide to frame the neighbor for the murder, or dismiss his strange behavior?('Frame' 'Dismiss'")
+
+if choice == "Frame":
+    print("You decide to frame the neighbor.")
+    print("As you're driving him to the police station, he pulls out a knife and slits his throat, out of fear of spending the rest of his life in jail.")
+    print("You framed the wrong person, and the real killer is still out on the loose, and not only that but your now responsible for someone's death.")
+elif choice == "dismiss":
+    print("You dismiss his strange behaviour.")
+    print("He seems rattled but innocent. You decide to leave and investigate the house.")
+    choice = input("Do you intestigate the house yourself or call reinforcements? 'reinforcements' 'yourself'")
+
+if choice == "reinforcements":
+    print("You call backup")
+    print("Your team searches the house and finds a hidden door in the basement, where the murderer is hiding.")
+    print("After questioning the murderer you find out that he was the previous owner of the house who lost his job and went broke now he hides in the house's secret room and kills any future owners of the house.")
+    print("You've solved the mystery!")
+elif choice == "yourself":
+    print("As your about to enter the house the neighbor pushes you down, 'I can't let you go in there, it'll kill you.' 'What are you talking about, who will kill me!?'- You yell in disbelief.")
+    print("Instead of answering the neighbor punches you... knocking you out.")
+    print("You wake up in a forest unaware and have no memory of what happened. The neighbor may have saved your life but you failed as a detective to find the murderer.")
+else:
+    print("Invalid choice please print 'reinforcements' or 'yourself'")        
+elif choice == "Question":
+    print("'Sir, I need to question you,' you say.")
+    print("The neighbor starts crying, insisting he did nothing.")
+    choice = input("Do you leave him be or interrogate him further? ('Leave' or 'Interrogate')")
+if choice == "Leave":
+    print("You decide to leave the neighbor alone and continue your investigation.")
+    print("The mystery remains unsolved.")
+
+elif choice == "interrogate":
+     print("Your kind demeanor turns harsh as you raise your voice getting angry at the neighbor.")
+     print("Unable to take it anymore the neighbor attacks you and your taken off guard, he starts to choke you gritting his teeth he says, 'I can't let you know the truth.'")
+     print("Your vision blurs as you start loosing oxygen, suddenly you remember you have a knife in your pocket.")
+     choice = input("do you grab the knife or accept your faith? ('pocket' 'faith')")
+     
+if choice == "pocket":
+     print("You stab the neighbor with your pocket knife, killing him.")
+     print("You flee the scene, living your life in guilt as a suspected murderer.")
+elif choice == "faith":
+     print("You get weaker and weaker and your unable to grab the knife, as you take your final breath the mans face fades from your sight. Your dead.")
+else:
+     print("Invalid, please choose 'pocket' or 'faith'")
+
+    
+def house_route():
+    print("The door to the house creeks open as you approach it, you step inside and the floor creaks. You analyze your surroundings, the house is dusty and you notice the only source of light is in the kitchen that barely works.")
+    print("There is also a dark stairwell that tempts you...")
+    choice = input("Do you approach the kitchen first, or go up the stairs. ('Kitchen,' 'Stairs.'")
+
+if choice == "Kitchen":
+    print("You walk to the kitchen and begin looking through the cabinets and drawers, looking in one of the drawers you find a bloody knife.")
+    choice = input("Do you collect the knife as evidence, or continue searching the house for more evidence.")
+
+if choice == "Knife":
+     print("Choosing to collect the knife as evidence you carefully pick it up and put it in a ziploc bag as you do that the police barge in along with the neighbor 'Hands up!'- the police yells, turns out the neighbor had been watching you and been suspicious of you all along and thought you were the murderer.")
+     print("Because you touched the knife your fingerprints are on it and you were framed for the murder. You spend the rest of your life in jail, and the actual truth of the midnight mystery remains unsolved.")
+elif choice == "Search":
+    print("You decide to continue looking for more evidence.")
+    choice = input("Do you go analyze the living room or  go down to the basement? ('Living room' 'Basement'")
+if choice == "living room":
+    print("You decide to continue searching the house for more evidence now moving to the living room. You notice there is a coffee table with with several papers dispersed across it. As you begin to look through the papers you realize they are old letters from the previous victim.")
+    print("In one of the letters the victim mentions being 'watched' by someone Just as you are about to read further, you hear a faint sound a ticking clock. The grand clock across the living room shows that it's nearly midnight.")
+    choice = input("Do you continue reading the letters or investigate the strange clock. ('Letters' 'Clock")
+if choice == "Letters":
+    print("You ignore the ticking sound and continue reading. The victim writes about seeing a shadowy figure lurk around midnight.")
+    print("The ticking grows louder and louder before you know it the clock chimes signaling midnight you feel a cold breath on your neck and something grabs you twisting your neck and killing you in an instant.")
+elif choice == "Clock":
+    print("As you walk towards the clock you begin to inspect it. Looking through the glass reflection you can see someone behind you... its a girl?")
+    print("She looks like the last victim, you turn around but she's not there. You decide to look back at the clock but you see her in the reflection coming closer and closer.")
+    print("before you know it she's about to stab you as the first stab goes into your body the clock chimes, its midnight, you are dead.")
+else:
+    print("Invalid choice please choose 'Clock or 'Letters'")
+
+elif choice == "Basement":
+    print("You descend down the creaky wet stairs of the basement. You notice strange markings on the walls that look like rituals.")
+    print("In the middle of the basement is a wooden table with strange items, items that seemed prepared just for you.")
+    choice = input("Do you investigate the 'items', or 'explore' the rest of the basement.")
+if choice == "Items":
+    print("You pick up a book and begin flipping through it. The text speaks of a ritual that must be performed at midnight to summon a dark force.")
+    print("Out of no where the basement door creeks and you feel something touch your shoulder, before you know it the ritual has began and the darkness swallows you.")
+elif choice == "Explore":
+    print("You decide not to touch the strange items instead you search the rest of the basement, behind an old stack of crates you find a hidden door. Pushing it open you enter to find a room filled with notebooks and papers on the walls with the victims details, and describing how each murder would carry out.")
+    print("Realizing this was the murderers secret hideout. You grab as many notebooks as you can and run upstairs out of the house and back into your car. You bring the notebooks as evidence and after your team  reads through the notebooks the identity of the murderer becomes clear.")
+    print("The murderer is put in jail, and now you have solved the midnight mystery!")
+else:
+    print("Invalid choice please choose 'Items' or 'Explore'")
+if choice == "stairs":
+    print("You head up the stairs but feel something grab your leg, causing you to trip and sprain your ankle.")
+    choice = input("Do you stop to treat your ankle or continue on limping? ('Ankle' or 'Continue')")
+
+if choice == "ankle":
+    print("Deciding its best to treat your ankle you limp back to your car, however the neighbor stops you.")
+    print("He explains to you the truth about how he saw the murderer and knows who he is however he was afraid to speak up afraid the murderer would come for him and his family.")
+    print("With this new evidence your able to testify in court and put the murderer in jail. You have solved the mystery!")
+elif choice == "Continue":
+    print("Thinking you had the strength in you to proceed, you continue up the stairs but suddenly you hear something behind you someone coming up after you.")
+    print(" You turn around and see a masked individual with a knife in their hands. You let out a scream and begin trying to rush up stairs but with your sprained ankle you struggle and end up tripping.")
+    print("The murderer stands above you with his knife as he raises it the last thing you see is the time on your watch. Exactly 12 midnight.")
