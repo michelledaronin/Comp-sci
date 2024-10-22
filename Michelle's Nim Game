@@ -1,0 +1,81 @@
+'''
+Michelle Daronin
+ICS3U - Nim Game
+Start Date: October 11, 2024
+Due Date: October 23, 2024
+'''
+# Nim is a 2-player game where there are sticks divided into piles, and each player takes turns removing any number of sticks from one of the piles. The goal is to not be the last one to take a stick from a pile.
+def start_game():
+    print("Welcome to Michelle's Nim game!")
+    print("Nim is a 2 playered game where each player takes turns to remove a number of sticks from a pile.")
+    print("The goal in the end is to not take the last stick, good luck & have fun!")
+
+# Initialize piles
+piles = [1, 3, 5, 7]
+
+# Display the piles
+def display_piles():
+    print("Current piles:")
+    for i, sticks in enumerate(piles):
+        print(f"Pile {i + 1}: {sticks} stick{'s' if sticks != 1 else ''}")
+
+def is_valid_move(pile_index, sticks_to_remove):
+    # Check if the pile index is valid and if the number of sticks to remove is valid
+    return 0 <= pile_index < len(piles) and piles[pile_index] >= sticks_to_remove > 0
+
+def remove_sticks(pile_index, sticks_to_remove):
+    piles[pile_index] -= sticks_to_remove
+
+def player_turn(player_name):
+    while True:
+        try:
+            pile_index = int(input(f"{player_name}, select a pile (1-4): ")) - 1
+            sticks_to_remove = int(input(f"{player_name}, how many sticks do you want to remove from pile {pile_index + 1}? "))
+            if is_valid_move(pile_index, sticks_to_remove):
+                remove_sticks(pile_index, sticks_to_remove)
+                break
+            else:
+                print("Invalid move. Please try again.")
+        except (ValueError, IndexError):
+            print("Invalid input. Please enter a valid pile number (1-4) and a valid number of sticks.")
+
+def computer_turn():
+    # Simple AI that tries to win more than 70% of the time
+    for i in range(len(piles)):
+        if piles[i] > 0:
+            # Simple strategy: take all sticks if it's advantageous or take one stick
+            if piles[i] == 1:
+                remove_sticks(i, 1)
+                print(f"Computer takes 1 stick from pile {i + 1}.")
+                return
+            elif piles[i] > 1:
+                # The AI can implement a more strategic move here
+                remove_sticks(i, 1)  # Taking one stick for now
+                print(f"Computer takes 1 stick from pile {i + 1}.")
+                return
+
+def dignity_check():
+    print("Remember to be respectful throughout the game; no insults, please maintain your dignity :)")
+
+# Example of gameplay loop
+player1 = input("Enter Player 1 name: ")
+player2 = "Computer"
+
+while sum(piles) > 0:
+    display_piles()
+    dignity_check()
+    
+    # Player's turn
+    player_turn(player1)
+    if sum(piles) == 0:
+        print(f"{player1} wins!")
+        break
+
+    display_piles()
+    dignity_check()
+    
+    # Computer's turn
+    computer_turn()
+    if sum(piles) == 0:
+        print(f"{player2} wins!")
+        break
