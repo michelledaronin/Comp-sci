@@ -40,7 +40,7 @@ def player_turn(player_name):
             print("Invalid input. Please enter a valid pile number (1-4) and a valid number of sticks.")
 
 def computer_turn():
-    # Simple AI that tries to win more than 70% of the time
+    # AI that tries to win more than 70% of the time
     for i in range(len(piles)):
         if piles[i] > 0:
             # Simple strategy: take all sticks if it's advantageous or take one stick
