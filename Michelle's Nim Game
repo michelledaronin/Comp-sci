@@ -49,7 +49,6 @@ def computer_turn():
                 print(f"Computer takes 1 stick from pile {i + 1}.")
                 return
             elif piles[i] > 1:
-                # The AI can implement a more strategic move here
                 remove_sticks(i, 1)  # Taking one stick for now
                 print(f"Computer takes 1 stick from pile {i + 1}.")
                 return
