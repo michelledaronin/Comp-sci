@@ -1,0 +1,23 @@
+def joke_1():
+    return "What did the lunch box say to the refrigerator? Don't hate me because I'm a little cooler."
+
+def joke_2():
+    return "Why can't you make a dinosaur omelet? Because they're egg-stinct."
+
+def joke_3():
+    return "Why did the lion go to therapy? Because he found out his wife was a cheetah."
+
+def tell_joke():
+    print("Would you like to hear a joke?")
+    choice = input("Joke 1, 2, or 3: ")
+
+    if choice == '1':
+        print(joke_1())
+    elif choice == '2':
+        print(joke_2())
+    elif choice == '3':
+        print(joke_3())
+    else:
+        print("Sorry, that is not a valid choice. Please enter 1, 2, or 3.")
+
+tell_joke()
