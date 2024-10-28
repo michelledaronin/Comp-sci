@@ -1,1 +1,10 @@
+def multiplication_table(number):
+    if number <= 0:
+        print("Please enter a positive integer.")
+        return  # This return will exit the function if the condition is met
+    
+    for i in range(1, 11):
+        result = number * i
+        print(f"{number} x {i} = {result}")
 
+multiplication_table(5)
