@@ -1,0 +1,11 @@
+def greet_user(name):
+    """
+    Print a greeting message to the user.
+
+    Parameters:
+    name (str): The name of the user to be greeted.
+
+    Returns:
+    None: This function does not return a value; it only prints a message.
+    """
+    print(f"Hello, {name}! Welcome!")
