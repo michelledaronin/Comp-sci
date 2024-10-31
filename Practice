@@ -1,0 +1,6 @@
+try:
+    user_input = float(input("Please enter a number : "))
+    result = user_input * 10
+    print("Result:", result)
+except ValueError:
+    print("Please enter a valid number.")
