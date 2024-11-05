@@ -1,0 +1,6 @@
+clothes_rack = []
+clothes = ["dress", "jacket", "sweater"]
+
+clothes_rack.extend(clothes)
+
+print(clothes_rack)
