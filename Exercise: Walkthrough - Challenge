@@ -1,0 +1,19 @@
+# Define the tuple of scores
+scores = (95, 87, 90, 78, 90, 91, 88, 90, 85, 72)
+
+highest_score = max(scores)
+print(f"Highest score: {highest_score}")
+
+lowest_score = min(scores)
+print(f"Lowest score: {lowest_score}")
+
+count_90 = scores.count(90)
+print(f"Score 90 appears {count_90} times.")
+
+# 4. Calculate and print the average score
+average_score = sum(scores) / len(scores)
+print(f"Average score: {average_score:.2f}")
+
+unique_scores = set(scores) 
+top_3_scores = sorted(unique_scores, reverse=True)[:3]
+print(f"Top 3 unique scores: {top_3_scores}")
