@@ -1,0 +1,21 @@
+favorite_colors = {
+    "Ivan": "Red",
+    "Kabi": "Blue",
+    "Michelle": "Green"
+}
+
+print("original dictionary:")
+print(favorite_colors)
+
+favorite_colors["David"] = "Yellow"
+print("\nDictionary after adding David:")
+print(favorite_colors)
+
+del favorite_colors["Michelle"]
+print("\nDictionary after removing Michelle:")
+print(favorite_colors)
+
+if "Michelle" in favorite_colors:
+    print("\nMichelle is in the dictionary.")
+else:
+    print("Michelle is not in the dictionary.")
