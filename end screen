@@ -1,0 +1,38 @@
+import pygame
+import sys
+
+# Initialize Pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("End Screens")
+
+WHITE = (255, 255, 255)
+
+end_screen1 = pygame.image.load("screen1.png")
+end_screen2 = pygame.image.load("screen2.png")
+
+end_screen1 = pygame.transform.scale(end_screen1, (WIDTH, HEIGHT))
+end_screen2 = pygame.transform.scale(end_screen2, (WIDTH, HEIGHT))
+
+def display_screen(screen_image):
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                return  
+
+        screen.blit(screen_image, (0, 0))
+        pygame.display.flip()
+
+if __name__ == "__main__":
+   
+    display_screen(end_screen1)
+
+    display_screen(end_screen2)
+
+    pygame.quit()
