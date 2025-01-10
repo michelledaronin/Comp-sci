@@ -1,0 +1,35 @@
+import pygame
+import os
+
+# Initialize Pygame mixer
+pygame.mixer.init()
+
+# Initialize Pygame
+pygame.init()
+
+# Optional: Set up the screen (if needed for visuals)
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Alice in Wonderland End OST")
+
+# Load and Play the OST
+try:
+    file_name = "Alice_in_wonderland_end_OST.mp3"  # Replace with the actual file name and extension
+    if os.path.exists(file_name):
+        pygame.mixer.music.load(file_name)
+        pygame.mixer.music.play(-1)  # Loop indefinitely
+        print("Now playing:", file_name)
+    else:
+        print(f"Error: {file_name} not found. Please check the file path.")
+except pygame.error as e:
+    print(f"Failed to load the music file: {e}")
+
+# Main loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+# Stop the music and quit Pygame
+pygame.mixer.music.stop()
+pygame.quit()
