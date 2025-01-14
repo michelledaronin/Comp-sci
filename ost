@@ -1,13 +1,11 @@
 import pygame
 import os
 
-# Initialize Pygame mixer
 pygame.mixer.init()
 
 # Initialize Pygame
 pygame.init()
 
-# Optional: Set up the screen (if needed for visuals)
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Alice in Wonderland End OST")
 
