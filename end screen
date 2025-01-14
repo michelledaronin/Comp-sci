@@ -17,7 +17,7 @@ end_screen2 = pygame.image.load("screen2.png")
 end_screen1 = pygame.transform.scale(end_screen1, (WIDTH, HEIGHT))
 end_screen2 = pygame.transform.scale(end_screen2, (WIDTH, HEIGHT))
 
-def display_screen(screen_image):
+def display_screen(screen1.png):
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
